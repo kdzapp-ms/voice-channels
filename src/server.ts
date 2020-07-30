@@ -1,3 +1,4 @@
+import * as path from "path";
 import * as express from "express";
 import { Application } from "express";
 import * as socketIO from "socket.io";
@@ -22,6 +23,13 @@ export class Server {
     this.app = express();
     this.httpServer = createServer(this.app);
     this.io = socketIO(this.httpServer);
+
+    this.configureApp();
+    this.handleSocketConnection();
+  }
+
+  private configureApp(): void {
+    this.app.use(express.static(path.join(__dirname, "../public")));
   }
 
   private handleRoutes(): void {
