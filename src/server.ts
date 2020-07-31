@@ -1,7 +1,9 @@
-import express, { Application } from "express";
-import socketIO, { Server as SocketIOServer } from "socket.io";
+import * as express from "express";
+import { Application } from "express";
+import * as socketIO from "socket.io";
+import { Server as SocketIOServer } from "socket.io";
 import { createServer, Server as HTTPServer } from "http";
-import path from "path";
+import * as path from "path";
 
 export class Server {
   private httpServer: HTTPServer;
