@@ -103,3 +103,7 @@ body {
   border-radius: 5px;
   width: 300px;
 }
+
+.center {
+  text-align: center;
+}
